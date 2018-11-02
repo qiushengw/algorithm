@@ -18,7 +18,7 @@ graph={
         "anuj" : ["bob"],
         "bob" : ["bob", "you", "peggy"],
         "you" : ["bob", "claire", "alice"],
-        "claire" : ["you","claire","thom"],
+        "clarire" : ["you","claire","thom"],
         "thom" : ["clarie"],
         "peggy" : ["bob", "alice"],
         "alice" : ["you", "peggy"]
@@ -35,31 +35,24 @@ def bfs(graph, start, end):
     search_queue = deque()
     search_queue += graph[start]
     searched=[]    
+    path=[start]
      
     while search_queue:
-        print(search_queue) 
         person = search_queue.popleft();
+        
         if person in searched:
             continue
-        else:
+        else
             searched.append(person)
 
         if is_seller(person):
             print("find seller"+person)
-            return person 
-        else:
-            search_queue+=graph[person]
+            return TRUE
+        else
+
+        search_queue+=graph[person]
 
     return NONE
 
-
-
-
-
-result=bfs(graph, "anuj", "thom")
-
-
-
-
-
+bfs(graph, "anuj", "thom")
 
